@@ -4,18 +4,18 @@
 		{
 			"type": "cppbuild",
 			"label": "C/C++: g++.exe 生成活动文件",
-			"command": "E:\\MinGW\\mingw64\\bin\\g++.exe",
+			"command": "E:/MinGW/mingw64/bin/g++.exe",
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"${fileDirname}\\*.cpp",
+				"${fileWorkspaceFolder}\\src\\*.cpp",
 				"-o",
-				"${fileWorkspaceFolder}\\main.exe",
+				"${workspaceFolder}\\main.exe",
 				"-I",
-				"${fileWorkspaceFolder}\\inc"
+				"${workspaceFolder}\\head"
 			],
 			"options": {
-				"cwd": "${workspaceFolder}"
+				"cwd": "E:/MinGW/mingw64/bin"
 			},
 			"problemMatcher": [
 				"$gcc"
@@ -24,7 +24,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"detail": "编译器: E:\\MinGW\\mingw64\\bin\\g++.exe"
+			"detail": "编译器: E:/MinGW/mingw64/bin/g++.exe"
 		}
 	]
 }
