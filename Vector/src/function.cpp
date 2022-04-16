@@ -108,4 +108,65 @@ void vector_and_iteration()
         *t = toupper(*t);
     }
     cout << s << endl;
+    for (auto it = s.begin(); it != s.end() && !isspace(*it); it++)
+    {
+        *it = toupper(*it);
+    }
+    cout << s << endl;
+    vector<vector<int>> my{{3, 9, 7}, {-4, 7, 10}};
+    //定义迭代器类型，iterator不能被引用
+    vector<vector<int>>::iterator it = my.begin(); //可以读写vector<int>元素
+    string::iterator it2;
+    vector<int>::const_iterator it3; //只能读，不能修改
+    string::const_iterator it4;
+    it2 = s.begin();              // iterator
+    auto it5 = s.cbegin();        // const_iterator
+    cout << (*it).size() << endl; //(*it)指向的对象是一个vector<int>对象
+    vector<string> text{"china", "google", "statistics"};
+    for (auto it = text.cbegin(); it != text.cend() && !it->empty(); it++)
+    {
+        cout << *it << endl;
+    }
+    //使用了迭代器之后不能用循环向对象中添加元素
+    auto p = &text;
+    p->push_back("today");
+    cout << *(--(p->end())) << endl;
+}
+
+void iteration()
+{
+    /*迭代器的运算*/
+    vector<string> vi{"GBK", "python"};
+    auto mid = vi.begin() + vi.size() / 2; // cbegin的下标是0，size是2，所以mid指向vi[1]
+    cout << *mid << endl;
+    auto it = vi.begin();
+    if (it < mid)
+    {
+        //处理前半部分元素
+        (*it) = "javascript";
+    }
+    for (auto p = vi.cbegin(); p != vi.cend(); p++)
+        cout << (*p) << endl;
+    vector<int> text{0, 1, 2, 5, 7, 10, 19, 25};
+    cout << "The size of text is " << text.size() << endl;
+    auto beg = text.begin(), end = text.end();
+    auto midd = beg + (end - beg) / 2;
+    int aim = 0;
+    cin >> aim;
+    while (midd != end && (*midd) != aim)
+    {
+        if ((*midd) > aim)
+        {
+            end = midd;
+        }
+        else
+        {
+            beg = midd + 1;
+        }
+        midd = beg + (end - beg) / 2;
+    }
+    if (midd == end)
+        cout << "未找到" << endl;
+    else
+        cout << *midd << endl;
 }
