@@ -18,7 +18,7 @@ void vector_first()
     for (int i = 0; i < articles.size(); i++)
     {
         cout << articles.size() << endl;
-        cout << articles[i] << endl; /* code */
+        cout << articles[i] << endl;
     }
     //值的默认初始化
     /*如果是默认类型，就按照默认方式处理；如果是某种类的类型，就按找默认构造函数初始化*/
@@ -87,6 +87,20 @@ void vector_second()
     /*
     scores[1] = 99 是错的！
     */
+
+    // vector重载了“ = ”运算符
+    vector<int> vi;
+    vi = {0, 19, 23, 4};
+    cout << vi[0] << "\t" << vi[1] << endl;
+    vector<string> textbook(2, "Chinese");
+
+    //直接把Chinese给去掉了，整体变成拷贝过来的值
+    textbook = {"English", "Math", "Biology", "Geography", "Physics", "Chemistry"};
+    cout << textbook.size() << endl;
+    for (const auto &p : textbook)
+    {
+        cout << p << endl;
+    }
 }
 
 void vector_and_iteration()

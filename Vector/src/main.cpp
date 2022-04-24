@@ -5,10 +5,10 @@ void vector_and_iteration();
 void iteration();
 int main()
 {
-    //vector_second();
+    vector_second();
     //vector_and_iteration();
     //vector_first();
-    iteration();
+    //iteration();
     system("pause");
     return 0;
 }
